@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "493849684789",
+    "firebase_url": "https://hotel-4bb77.firebaseio.com",
+    "project_id": "hotel-4bb77",
+    "storage_bucket": "hotel-4bb77.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:493849684789:android:ba076bd06721a03b377a7c",
+        "android_client_info": {
+          "package_name": "th.ac.kku.cis.mobileapp.hotel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "493849684789-q3214qt0bfkpcaetnq8c6o4hgrm5lv2r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "th.ac.kku.cis.mobileapp.hotel",
+            "certificate_hash": "a2a885d476873b55748d4b697686a8f2c9a882d9"
+          }
+        },
+        {
+          "client_id": "493849684789-77rmsk6eq08e9uabob17055jkrpjbqpn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXSXLA4AfwwCcBkqgpWOWbsmdbQ49Q9nw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "493849684789-77rmsk6eq08e9uabob17055jkrpjbqpn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
