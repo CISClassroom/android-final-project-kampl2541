@@ -1,6 +1,10 @@
 package th.ac.kku.cis.mobileapp.hotel
 
-class Task_Room (val Room:String, val Status:String)
+import kotlinx.android.synthetic.main.activity_add_room.view.*
+
+class Task_Room (val Room:String ,val Status:String,val roomid:Int)//
+
+
 
 class The_room {
     companion object Factory {

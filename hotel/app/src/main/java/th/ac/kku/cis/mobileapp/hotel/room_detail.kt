@@ -17,6 +17,9 @@ class room_detail : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_room_detail)
+
+        //tv.text =  intent.getIntExtra("EXTRA_SESSION_ID",0).toString()
+
         v = intent.getIntExtra("val",0)
         textView12.visibility= View.GONE
         textView13.visibility= View.GONE
@@ -24,11 +27,16 @@ class room_detail : AppCompatActivity() {
         textView15.visibility= View.GONE
         textView16.visibility= View.GONE
         ref = FirebaseDatabase.getInstance().getReference("The_room").child(v.toString())
+
+
         button_delete.setOnClickListener {
+
             ref.removeValue()
             finish()
 
         }
+
+
         items = mutableListOf()
         //เรียกใช้ข้อมูลใน fibase
         ref.addValueEventListener(object : ValueEventListener {

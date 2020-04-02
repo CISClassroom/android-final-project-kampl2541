@@ -34,23 +34,22 @@ class Homepage : AppCompatActivity() {
      var listView = findViewById<ListView>(R.id.ListView_class1)
        items = mutableListOf()
         val Task_Room = mutableListOf<Task_Room>()
-        Task_Room.add((Task_Room("ห้อง1-01","no")))
-        Task_Room.add((Task_Room("ห้อง1-02","no")))
-        Task_Room.add((Task_Room("ห้อง1-03","no")))
-        Task_Room.add((Task_Room("ห้อง1-04","no")))
-        Task_Room.add((Task_Room("ห้อง1-05","no")))
-        Task_Room.add((Task_Room("ห้อง1-06","no")))
-        Task_Room.add((Task_Room("ห้อง1-07","no")))
-        Task_Room.add((Task_Room("ห้อง1-08","no")))
-        Task_Room.add((Task_Room("ห้อง1-09","no")))
-        Task_Room.add((Task_Room("ห้อง1-10","no")))
+        Task_Room.add((Task_Room("ห้อง1-01","no",101)))
+        Task_Room.add((Task_Room("ห้อง1-02","no",102)))
+        Task_Room.add((Task_Room("ห้อง1-03","no",103)))
+        Task_Room.add((Task_Room("ห้อง1-04","no",104)))
+        Task_Room.add((Task_Room("ห้อง1-05","no",105)))
+        Task_Room.add((Task_Room("ห้อง1-06","no",106)))
+        Task_Room.add((Task_Room("ห้อง1-07","no",107)))
+        Task_Room.add((Task_Room("ห้อง1-08","no",108)))
+        Task_Room.add((Task_Room("ห้อง1-09","no",109)))
+        Task_Room.add((Task_Room("ห้อง1-10","no",110)))
 
         listView.adapter = RoomAdapter(this,R.layout.activity_the_room , Task_Room)
 
         listView.setOnItemClickListener { parent, view, position, id ->
 
-            if(position==0){
-                ref = FirebaseDatabase.getInstance().getReference("The_room").child("101")
+                ref = FirebaseDatabase.getInstance().getReference("The_room").child(Task_Room[position].roomid.toString())
                 ref.addValueEventListener(object : ValueEventListener {
                     override fun onCancelled(p0: DatabaseError) {
 
@@ -59,13 +58,13 @@ class Homepage : AppCompatActivity() {
                     override fun onDataChange(p0: DataSnapshot) {
                         if(p0!!.exists()){
                             var i = Intent(this@Homepage,room_detail::class.java)
-                            i.putExtra("val",101)
+                            i.putExtra("val",Task_Room[position].roomid)
 
                             startActivity(i)
                         }
                         else{
                             var i = Intent(this@Homepage,add_room::class.java)
-                            i.putExtra("val",101)
+                            i.putExtra("val",Task_Room[position].roomid)
 
                             startActivity(i)
 
@@ -73,205 +72,7 @@ class Homepage : AppCompatActivity() {
 
                     }
                 })
-            }
-            else if(position==1){
-                ref = FirebaseDatabase.getInstance().getReference("The_room").child("102")
-                ref.addValueEventListener(object : ValueEventListener {
-                    override fun onCancelled(p0: DatabaseError) {
 
-                    }
-
-                    override fun onDataChange(p0: DataSnapshot) {
-                        if(p0!!.exists()){
-                            var i = Intent(this@Homepage,room_detail::class.java)
-                            i.putExtra("val",102)
-                            startActivity(i)
-                        }
-                        else{
-                            var i = Intent(this@Homepage,add_room::class.java)
-                            i.putExtra("val",102)
-                            startActivity(i)
-                        }
-
-                    }
-                })
-            }
-            else if(position==2){
-                ref = FirebaseDatabase.getInstance().getReference("The_room").child("103")
-                ref.addValueEventListener(object : ValueEventListener {
-                    override fun onCancelled(p0: DatabaseError) {
-
-                    }
-
-                    override fun onDataChange(p0: DataSnapshot) {
-                        if(p0!!.exists()){
-                            var i = Intent(this@Homepage,room_detail::class.java)
-                            i.putExtra("val",103)
-                            startActivity(i)
-                        }
-                        else{
-                            var i = Intent(this@Homepage,add_room::class.java)
-                            i.putExtra("val",103)
-                            startActivity(i)
-                        }
-
-                    }
-                })
-            }
-            else if(position==3){
-                ref = FirebaseDatabase.getInstance().getReference("The_room").child("104")
-                ref.addValueEventListener(object : ValueEventListener {
-                    override fun onCancelled(p0: DatabaseError) {
-
-                    }
-
-                    override fun onDataChange(p0: DataSnapshot) {
-                        if(p0!!.exists()){
-                            var i = Intent(this@Homepage,room_detail::class.java)
-                            i.putExtra("val",104)
-                            startActivity(i)
-                        }
-                        else{
-                            var i = Intent(this@Homepage,add_room::class.java)
-                            i.putExtra("val",104)
-                            startActivity(i)
-                        }
-
-                    }
-                })
-            }
-            if(position==4){
-                ref = FirebaseDatabase.getInstance().getReference("The_room").child("105")
-                ref.addValueEventListener(object : ValueEventListener {
-                    override fun onCancelled(p0: DatabaseError) {
-
-                    }
-
-                    override fun onDataChange(p0: DataSnapshot) {
-                        if(p0!!.exists()){
-                            var i = Intent(this@Homepage,room_detail::class.java)
-                            i.putExtra("val",105)
-                            startActivity(i)
-                        }
-                        else{
-                            var i = Intent(this@Homepage,add_room::class.java)
-                            i.putExtra("val",105)
-                            startActivity(i)
-                        }
-
-                    }
-                })
-            }
-            else if(position==5){
-                ref = FirebaseDatabase.getInstance().getReference("The_room").child("106")
-                ref.addValueEventListener(object : ValueEventListener {
-                    override fun onCancelled(p0: DatabaseError) {
-
-                    }
-
-                    override fun onDataChange(p0: DataSnapshot) {
-                        if(p0!!.exists()){
-                            var i = Intent(this@Homepage,room_detail::class.java)
-                            i.putExtra("val",106)
-                            startActivity(i)
-                        }
-                        else{
-                            var i = Intent(this@Homepage,add_room::class.java)
-                            i.putExtra("val",106)
-                            startActivity(i)
-                        }
-
-                    }
-                })
-            }
-            else if(position==6){
-                ref = FirebaseDatabase.getInstance().getReference("The_room").child("107")
-                ref.addValueEventListener(object : ValueEventListener {
-                    override fun onCancelled(p0: DatabaseError) {
-
-                    }
-
-                    override fun onDataChange(p0: DataSnapshot) {
-                        if(p0!!.exists()){
-                            var i = Intent(this@Homepage,room_detail::class.java)
-                            i.putExtra("val",107)
-                            startActivity(i)
-                        }
-                        else{
-                            var i = Intent(this@Homepage,add_room::class.java)
-                            i.putExtra("val",107)
-                            startActivity(i)
-                        }
-
-                    }
-                })
-            }
-            else if(position==7){
-                ref = FirebaseDatabase.getInstance().getReference("The_room").child("108")
-                ref.addValueEventListener(object : ValueEventListener {
-                    override fun onCancelled(p0: DatabaseError) {
-
-                    }
-
-                    override fun onDataChange(p0: DataSnapshot) {
-                        if(p0!!.exists()){
-                            var i = Intent(this@Homepage,room_detail::class.java)
-                            i.putExtra("val",108)
-                            startActivity(i)
-                        }
-                        else{
-                            var i = Intent(this@Homepage,add_room::class.java)
-                            i.putExtra("val",108)
-                            startActivity(i)
-                        }
-
-                    }
-                })
-            }
-            else if(position==8){
-                ref = FirebaseDatabase.getInstance().getReference("The_room").child("109")
-                ref.addValueEventListener(object : ValueEventListener {
-                    override fun onCancelled(p0: DatabaseError) {
-
-                    }
-
-                    override fun onDataChange(p0: DataSnapshot) {
-                        if(p0!!.exists()){
-                            var i = Intent(this@Homepage,room_detail::class.java)
-                            i.putExtra("val",109)
-                            startActivity(i)
-                        }
-                        else{
-                            var i = Intent(this@Homepage,add_room::class.java)
-                            i.putExtra("val",109)
-                            startActivity(i)
-                        }
-
-                    }
-                })
-            }
-            else if(position==9){
-                ref = FirebaseDatabase.getInstance().getReference("The_room").child("110")
-                ref.addValueEventListener(object : ValueEventListener {
-                    override fun onCancelled(p0: DatabaseError) {
-
-                    }
-
-                    override fun onDataChange(p0: DataSnapshot) {
-                        if(p0!!.exists()){
-                            var i = Intent(this@Homepage,room_detail::class.java)
-                            i.putExtra("val",110)
-                            startActivity(i)
-                        }
-                        else{
-                            var i = Intent(this@Homepage,add_room::class.java)
-                            i.putExtra("val",110)
-                            startActivity(i)
-                        }
-
-                    }
-                })
-            }
 
         }
 
