@@ -42,8 +42,8 @@ class add_room : AppCompatActivity() {
         newData.checkin_date = in_date.text.toString()
         newData.checkin_time = in_time.text.toString()
 
-        newData.checkout_date = out_time.text.toString()
-        newData.checkout_time = out_date.text.toString()
+        newData.checkout_date = out_date.text.toString()
+        newData.checkout_time = out_time.text.toString()
 
         newData.id = obj.key
         obj.setValue(newData)
